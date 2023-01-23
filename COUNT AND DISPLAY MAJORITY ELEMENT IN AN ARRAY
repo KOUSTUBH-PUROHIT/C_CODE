@@ -1,0 +1,43 @@
+#include<stdio.h>
+
+int main(void)
+{
+    int arr[] = {2,2,2,3,4,4,5,6,2,2,2,2};
+    int n;
+    int m_count = 0;
+    int index=-1;
+    n = (sizeof arr)/(sizeof arr[0]);
+
+    for(int i=0; i<n; i++)
+    {
+         int count = 0;
+         for(int j =0; j<n; j++)
+         {
+
+            if(arr[i]==arr[j])
+            {
+                count++;
+            }
+            if(count>m_count)
+            {
+                m_count=count;
+                index = i;
+            }
+         }
+
+    }
+   if(m_count>n/2)
+   {
+   printf("REPETING ELEMENT IS: %d\n",arr[index]);
+   printf("COUNT OF REPETING ELEMENT IS : %d\n",m_count);
+   }
+   else
+   {
+    printf("NO SUCH ELEMENT FOUND.");
+   }
+
+    return 0;
+}
+
+
+
